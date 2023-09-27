@@ -1,19 +1,22 @@
 const mainEl = document.querySelector('.main')
-const liveSearch = document.querySelector('.live-search')
+
+const formEl = document.createElement('form')
 
 const reposContainer = document.createElement('div')
 reposContainer.classList.add('repos-container')
-document.body.appendChild(reposContainer)
-
-const formEl = document.createElement('form')
 
 const input = document.createElement('input')
 input.classList.add('search-input')
 input.setAttribute('type', 'text')
 input.setAttribute('name', 'name')
 
+const liveSearch =  document.createElement('div');
+liveSearch.classList.add('live-search')
+
 formEl.appendChild(input);
+formEl.appendChild(liveSearch)
 mainEl.appendChild(formEl);
+mainEl.appendChild(reposContainer)
 
 //debounce func
 const debounce = (fn, debounceTime) => {
